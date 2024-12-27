@@ -5,10 +5,8 @@ import React from "react";
 
 
 
-const MovieCard = ({ movie }) => {
-    const deleteMovie = () => {
-        deleteMovie(movie.id);
-    };
+const MovieCard = ({ movie, deleteMovie }) => {
+    
     return (
         <div className="movie-card">
             <Card>
@@ -29,7 +27,7 @@ const MovieCard = ({ movie }) => {
                 <Card.Body>
                     <Card.Title>{movie.title}</Card.Title>
                     <Card.Text>{movie.genre}</Card.Text>
-                    <Button onClick={deleteMovie}>Delete</Button>
+                    <Button onClick={() =>deleteMovie(movie.id)}>Delete</Button>
                 </Card.Body>
             </Card>
            
